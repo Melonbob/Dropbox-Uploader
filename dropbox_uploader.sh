@@ -29,7 +29,7 @@ CHUNK_SIZE=50
 
 #Curl location
 #If not set, curl will be searched into the $PATH
-#CURL_BIN="/usr/bin/curl"
+CURL_BIN="/opt/bin/curl"
 
 #Default values
 TMP_DIR="/tmp"
@@ -78,6 +78,9 @@ if [ -z "$BASH_VERSION" ]; then
     echo -e "Error: this script requires the BASH shell!"
     exit 1
 fi
+
+#Check for Entware /opt install of CURL_BIN and BIN_DEPS for embedded devices
+#and if user wants a different path's version
 
 shopt -s nullglob #Bash allows filename patterns which match no files to expand to a null string, rather than themselves
 shopt -s dotglob  #Bash includes filenames beginning with a "." in the results of filename expansion
